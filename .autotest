@@ -1,0 +1,8 @@
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .idea .DS_Store doc log tmp vendor}.each do |exception|
+    autotest.add_exception(exception)
+  end
+end
+
+require 'autotest/fsevent'
+require 'autotest/growl'
